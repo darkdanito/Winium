@@ -21,6 +21,18 @@
 
         #region Constructors and Destructors
 
+        // https://raw.githubusercontent.com/SeleniumHQ/selenium/master/dotnet/CHANGELOG
+        //v3.11.2
+        // * Reverted change of ICommandExecutor interface to extend IDisposable. This
+        //   change will reappear at some point. Downstream projects will need to
+        //   implement a `public void Dispose()` method on any classes that implement
+        //   ICommandExecutor to prevent breaking when this interface change is added
+        //   again. Fixes issue #5768.
+        public void Dispose()
+        {
+            // TO DO: ?
+        }
+
         public WiniumDriverCommandExecutor(WiniumDriverService driverService, TimeSpan commandTimeout)
         {
             this.service = driverService;
